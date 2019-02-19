@@ -19,3 +19,6 @@ Property management software
 * [DocuSign](https://www.docusign.com/) - E-Signature API
 * [Firebase](https://firebase.google.com/) - Database Management
 * [GitHub](https://github.com/) - Version Control
+
+## Acknowledgements
+* [FreeLogoDesign](https://www.freelogodesign.org/) - LeaseLord Logo
