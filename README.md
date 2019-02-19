@@ -4,8 +4,14 @@ Property management software
 
 ## Authors
 
-* **William Owenby** - Front End - [GitHub Account](https://github.com/william-c-owenby)
-* **Ian Dimitri** - Front/Back End - [GitHub Account](https://github.com/imd15)
+* **Shannon Drizin** - *Front End* - [GitHub Account](https://github.com/shannondrizin )
+* **William Owenby** - *Front End* - [GitHub Account](https://github.com/william-c-owenby)
+* **Ian Dimitri** - *Front/Back End* - [GitHub Account](https://github.com/imd15)
+* **Leah Bissey** - *Back End* - [GitHub Account](https://github.com/Leahbissey)
+* **Hussnain Zaidi** - *Back End* - [GitHub Account](https://github.com/hmz99)
+
+### See also:
+* [Contributors](https://github.com/LeaseLord/LeaseLordWeb/graphs/contributors)
 
 ## Built With
 
