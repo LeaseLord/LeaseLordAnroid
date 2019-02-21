@@ -1,6 +1,6 @@
 # Front End
 
-Folder for designing the HTML and CSS web pages
+Folder for designing the HTML and CSS of web pages
 
 ## Developers
 
