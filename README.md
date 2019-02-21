@@ -11,6 +11,7 @@ Property management software
 * **Hussnain Zaidi** - *Back End* - [GitHub Account](https://github.com/hmz99)
 
 ### See also:
+
 * [Contributors](https://github.com/LeaseLord/LeaseLordWeb/graphs/contributors)
 
 ## Built With
@@ -21,4 +22,5 @@ Property management software
 * [GitHub](https://github.com/) - Version Control
 
 ## Acknowledgements
+
 * [FreeLogoDesign](https://www.freelogodesign.org/) - LeaseLord Logo
