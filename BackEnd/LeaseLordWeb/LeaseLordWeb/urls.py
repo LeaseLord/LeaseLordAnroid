@@ -19,6 +19,6 @@ from users import views
 from django.conf.urls import include
 
 urlpatterns = [
-    path('user/register',views. include('users.url')),
+    path('user/register', include('users.url')),
     path('admin/', admin.site.urls),
 ]
