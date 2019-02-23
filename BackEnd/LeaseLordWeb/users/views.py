@@ -12,7 +12,7 @@ def register(request):
         phone = request.POST.get('phone',None)
         email = request.POST.get('email',None)
         organization = request.POST.get('organization',None)
-        User.objects.create_user(username=username, password=password, email=email,phone = phone,organization = organization)
+        User.objects.create_user(username=username, password=password, email=email,phone = phone,organization = organization,name=name)
         return HttpResponseRedirect('/')
     else:
         return render(request,'registration/register.html')
