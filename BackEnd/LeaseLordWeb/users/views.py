@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect
 User = get_user_model()
 
 def register(request):
