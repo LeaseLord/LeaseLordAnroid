@@ -6,27 +6,23 @@ User = get_user_model()
 
 def registercheck(request):
     if request.method == "POST":
-        print("This runs")
         landorten = request.POST.get('landorten')
         if landorten == '1':
-            return render(request,'registration/registerland.html')
-            landorten = '100';
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
-            username = request.POST.get('username',None)
+            return HttpResponseRedirect('/registerten')
+
         if landorten == '0':
-            return render(request,'registration/registerten.html')
-
-
-
-
-
+                return HttpResponseRedirect('/registerland')
     else:
         return render(request,'registration/register.html')
+
+
+def registerten(request):
+    if request.method == "POST":
+        username = request.POST.get('username',None)
+        password = request.POST.get('password',None)
+        firstname = request.POST.get('first',none)
+        lastname = request.POST.get('last',none)
+
 
 
 
