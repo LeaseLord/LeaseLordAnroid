@@ -4,18 +4,30 @@ from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 User = get_user_model()
 
-def register(request):
-    if request.method == 'POST':
-        username = request.POST.get('username',None)
-        password = request.POST.get('password',None)
-        name = request.POST.get('name',None)
-        phone = request.POST.get('phone',None)
-        email = request.POST.get('email',None)
-        organization = request.POST.get('organization',None)
-        User.objects.create_user(username=username, password=password, email=email,phone = phone,organization = organization,name=name)
-        return HttpResponseRedirect('/')
+def registercheck(request):
+    if request.method == "POST":
+        print("This runs")
+        landorten = request.POST.get('landorten')
+        if landorten == '1':
+            return render(request,'registration/registerland.html')
+            landorten = '100';
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+            username = request.POST.get('username',None)
+        if landorten == '0':
+            return render(request,'registration/registerten.html')
+
+
+
+
+
     else:
         return render(request,'registration/register.html')
+
 
 
 # Create your views here.
