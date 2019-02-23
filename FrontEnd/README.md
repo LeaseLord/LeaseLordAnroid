@@ -51,3 +51,5 @@ Folder for designing the HTML and CSS of web pages
 * **Atom**
   * [API](https://atom.io/docs/api/v1.34.0/AtomEnvironment)
   * [GitHub Package](https://flight-manual.atom.io/using-atom/sections/github-package/)
+* **HTML**
+  * [Input Types](https://www.w3schools.com/html/html_form_input_types.asp)
