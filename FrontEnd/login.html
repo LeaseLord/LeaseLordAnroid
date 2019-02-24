@@ -1,37 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Required Meta Tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>LeaseLord - Login</title>
   </head>
   <body>
-    <form>
+    <center>
+      <form>
+        <!-- Logo -->
+        <div class="imgcontainer">
+          <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+        </div>
 
-      <!-- Logo -->
-      <div class="imgcontainer">
-        <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
-      </div>
+        <!-- Login Container -->
+        <div class="container">
 
-      <!-- Login Container -->
-      <div class="container">
+          <!-- Username Field -->
+          <label for="uname"><b>Username</b></label><br>
+          <input type="text" placeholder="Enter Username" name="uname" required><br>
 
-        <!-- Username Field -->
-        <label for="uname"><b>Username</b></label><br>
-        <input type="text" placeholder="Enter Username" name="uname" required><br>
+          <!-- Password Field -->
+          <label for="pwd"><b>Password</b></label><br>
+          <input type="password" placeholder="Enter Password" name="pwd" required><br>
 
-        <!-- Password Field -->
-        <label for="pwd"><b>Password</b></label><br>
-        <input type="password" placeholder="Enter Password" name="pwd" required><br>
+          <!-- Forgot Password Link -->
+          <span class="pwd"><a href="#">Forgot your password?</a></span><br>
 
-        <!-- Login Button -->
-        <button type="submit">Login</button>
-
-      <!-- Forgot Password Link -->
-      </div>
-      <div class="container">
-        <!-- <span class="pwd">Forgot your <a href="#">password</a>?</span> -->
-      </div>
-
-    <form>
+          <!-- Login Button -->
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </center>
   </body>
 </html>
