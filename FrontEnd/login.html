@@ -8,47 +8,75 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- My CSS -->
-    <style>
-      .mycustomjumbotron{
-        width: 50%;
-        max-width: 400px;
-        align-self: center;
-      }
-    </style>
-
     <title>LeaseLord - Login</title>
-  </head>
-  <body>
+
+    <div class="container">
+
+    <div class="row">
+
+    <!-- Left Column (Empty) -->
+    <aside class="col-sm-4">
+    </aside> <!-- col.// -->
+
+    <!-- Middle Column -->
+    <aside class="col-sm-4">
+
     <div class="card">
-      <div class="jumbotron mycustomjumbotron">
+      <article class="card-body">
+
+        <!-- LeaseLord Logo -->
+        <center>
+          <div class="imgcontainer">
+            <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+          </div>
+        </center>
+
+        <br>
+
+        <!-- Login Form -->
         <form>
-          <!-- Logo -->
-          <center>
-            <div class="imgcontainer">
-              <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
-            </div>
-          </center>
 
-          <!-- Login Container -->
-          <div class="container">
+          <a href="#" class="float-right">Sign up</a>
 
-            <!-- Username Field -->
-            <br><label for="username"><b>Username</b></label><br>
-            <input type="text" class="form-control" placeholder="Enter Username" name="username" required><br>
+          <!-- Username Field -->
+          <div class="form-group">
+            <label for="username"><b>Username</b></label><br>
+            <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+          </div> <!-- form-group// -->
 
-            <!-- Password Field -->
+          <!-- Password Field -->
+          <div class="form-group">
             <label for="userpass"><b>Password</b></label><br>
             <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required>
-
             <!-- Forgot Password Link -->
-            <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br><br>
+            <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br>
+          </div> <!-- form-group// -->
 
-            <!-- Login Button -->
-            <input class="btn btn-primary btn-block" type="submit" value="Submit">
-          </div>
+          <!-- Submit Button -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          </div> <!-- form-group// -->
+
         </form>
+
+      </article>
+    </div> <!-- card.// -->
+
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Footer -->
+    <div class="row">
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here, but aligned to the left of the page.</span>
       </div>
-    </div>
+    </footer>
+
   </body>
 </html>
