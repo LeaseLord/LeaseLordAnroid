@@ -11,31 +11,35 @@
     <title>LeaseLord - Login</title>
   </head>
   <body>
-    <center>
-      <form>
-        <!-- Logo -->
-        <div class="imgcontainer">
-          <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
-        </div>
+    <div class="container">
+      <div class="jumbotron">
+        <form>
+          <!-- Logo -->
+          <div class="imgcontainer">
+            <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+          </div>
 
-        <!-- Login Container -->
-        <div class="container">
+          <!-- Login Container -->
+          <div class="container">
 
-          <!-- Username Field -->
-          <label for="uname"><b>Username</b></label><br>
-          <input type="text" placeholder="Enter Username" name="uname" required><br>
+            <!-- Username Field -->
+            <label for="username"><b>Username</b></label><br>
+            <input type="text" class="form-control" placeholder="Enter Username" name="username" required><br>
 
-          <!-- Password Field -->
-          <label for="pwd"><b>Password</b></label><br>
-          <input type="password" placeholder="Enter Password" name="pwd" required><br>
+            <!-- Password Field -->
+            <label for="userpass"><b>Password</b></label><br>
+            <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required><br>
+
+          </div>
 
           <!-- Forgot Password Link -->
-          <span class="pwd"><a href="#">Forgot your password?</a></span><br>
+          <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br>
 
           <!-- Login Button -->
-          <button type="submit">Login</button>
-        </div>
-      </form>
-    </center>
+          <input class="btn btn-primary" type="submit" value="Submit">
+          <!-- <button type="submit">Login</button> -->
+        </form>
+      </div>
+    </div>
   </body>
 </html>
