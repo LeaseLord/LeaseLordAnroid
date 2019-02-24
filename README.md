@@ -4,11 +4,11 @@ Property management software
 
 ## Authors
 
-* **Shannon Drizin** - *Front End* - [GitHub Account](https://github.com/shannondrizin )
-* **William Owenby** - *Front End* - [GitHub Account](https://github.com/william-c-owenby)
-* **Ian Dimitri** - *Front/Back End* - [GitHub Account](https://github.com/imd15)
-* **Leah Bissey** - *Back End* - [GitHub Account](https://github.com/Leahbissey)
-* **Hussnain Zaidi** - *Back End* - [GitHub Account](https://github.com/hmz99)
+* [**Shannon Drizin**](https://github.com/shannondrizin ) - *Front End*
+* [**William Owenby**](https://github.com/william-c-owenby) - *Front End*
+* [**Ian Dimitri**](https://github.com/imd15) - *Front/Back End*
+* [**Leah Bissey**](https://github.com/Leahbissey) - *Back End*
+* [**Hussnain Zaidi**](https://github.com/hmz99) - *Back End*
 
 ### See also:
 
@@ -16,8 +16,8 @@ Property management software
 
 ## Built With
 
-* [Django](https://www.djangoproject.com/) - Framework
-* [DocuSign](https://www.docusign.com/) - E-Signature API
+* [Bootstrap](https://getbootstrap.com/) - Front End Framework
+* [Django](https://www.djangoproject.com/) - Back End Framework
 * [Firebase](https://firebase.google.com/) - Database Management
 * [GitHub](https://github.com/) - Version Control
 
