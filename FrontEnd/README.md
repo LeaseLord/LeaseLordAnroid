@@ -6,8 +6,6 @@ Folder for designing the HTML and CSS of web pages
 
 * [**Shannon Drizin**](https://github.com/shannondrizin )
   * OS: **Windows 10 Business**
-    * Version: *...*
-    * Build: *...*
   * DCVS: **Git**
     * Version: *2.20.1.windows.1*
   * Text Editor: **Atom**
@@ -25,13 +23,13 @@ Folder for designing the HTML and CSS of web pages
   * Framework: **Bootstrap**
     * Version: *4.3*
 * [**Ian Dimitri**](https://github.com/imd15)
-  * OS: **...**
-    * Version: *...*
-    * Build: *...*
+  * OS: **Windows 10 Home**
+    * Version: *1803*
+    * Build: *17134.590*
   * DCVS: **Git**
     * Version: *2.18.0.windows.1*
-  * Text Editor: **...**
-    * Version: *...*
+  * Text Editor: **Visual Studio Code**
+    * Version: *1.26.1*
 
 ### See also:
 
