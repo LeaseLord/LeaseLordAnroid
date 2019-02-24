@@ -8,36 +8,44 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- My CSS -->
+    <style>
+      .mycustomjumbotron{
+        width: 400px;
+        align-self: center;
+      }
+    </style>
+
     <title>LeaseLord - Login</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
+    <div class="card">
+      <div class="jumbotron mycustomjumbotron">
         <form>
           <!-- Logo -->
-          <div class="imgcontainer">
-            <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
-          </div>
+          <center>
+            <div class="imgcontainer">
+              <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+            </div>
+          </center>
 
           <!-- Login Container -->
           <div class="container">
 
             <!-- Username Field -->
-            <label for="username"><b>Username</b></label><br>
+            <br><label for="username"><b>Username</b></label><br>
             <input type="text" class="form-control" placeholder="Enter Username" name="username" required><br>
 
             <!-- Password Field -->
             <label for="userpass"><b>Password</b></label><br>
-            <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required><br>
+            <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required>
 
+            <!-- Forgot Password Link -->
+            <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br><br>
+
+            <!-- Login Button -->
+            <input class="btn btn-primary btn-block" type="submit" value="Submit">
           </div>
-
-          <!-- Forgot Password Link -->
-          <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br>
-
-          <!-- Login Button -->
-          <input class="btn btn-primary" type="submit" value="Submit">
-          <!-- <button type="submit">Login</button> -->
         </form>
       </div>
     </div>
