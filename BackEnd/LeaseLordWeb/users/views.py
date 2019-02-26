@@ -70,4 +70,51 @@ def registerten(request):
 # If not taken create user,create property manager object and save it. Then return Thank You message
 # If method is GET then just render the registerland.html page.
 def registerpm(request):
-    return
+    if request.method == "POST":
+    #Get data from POST
+        username = request.POST.get('username',None)
+        password = request.POST.get('password',None)
+        name = request.POST.get('name',None)
+        email = request.POST.get('email',None)
+        phone = request.POST.get('phone', None)
+        vemail = request.POST.get('vemail',None)
+        organization = request.POST.get('organization',None)
+
+
+    #Check that username is not taken
+        if User.objects.filter(username = username).exists():
+            html = "<script> alert(\"Username is taken. Please try another one.\") </script>"
+            content = loader.render_to_string('registration/registerland.html')
+            upper,lower = content.split('</body>',1)
+            upper += html
+            upper += lower
+            return HttpResponse(upper)
+
+    #check that email and verify email match
+        if email != vemail:
+            html = "<script> alert(\"Emails do not match. Plase try again.\") </script>"
+            content = loader.render_to_string('registration/registerland.html')
+            upper,lower = content.split('</body>',1)
+            upper += html
+            upper += lower
+            return HttpResponse(upper)
+
+        #Check if Organization/PropertyManager exists
+        if PropertyManager.objects.filter(organization=organization).exists():
+            html = "<script> alert(\"Organization has already been registered. Please try again.\") </script>"
+            content = loader.render_to_string('registration/registerland.html')
+            upper,lower = content.split('</body>',1)
+            upper += html
+            upper += lower
+            return HttpResponse(upper)
+        else:
+        #if it doesn't, create user
+            user = User.objects.create_user(name = name, username = username,
+                                        password = password, email = email, is_propertymanager = True,
+                                        organization = organization)
+            propertymanager = PropertyManager(user = user)
+            propertymanager.save()
+            return HttpResponse("Thank You, you have been registered.")
+
+    else:
+        return render(request,'registration/registerland.html')
