@@ -74,7 +74,8 @@ def registerpm(request):
     #Get data from POST
         username = request.POST.get('username',None)
         password = request.POST.get('password',None)
-        name = request.POST.get('name',None)
+        firstname = request.POST.get('firstname',None)
+        lastname = request.POST.get('lastname',None)
         email = request.POST.get('email',None)
         phone = request.POST.get('phone', None)
         vemail = request.POST.get('vemail',None)
@@ -109,10 +110,9 @@ def registerpm(request):
             return HttpResponse(upper)
         else:
         #if it doesn't, create user
-            user = User.objects.create_user(name = name, username = username,
-                                        password = password, email = email, is_propertymanager = True,
-                                        organization = organization)
-            propertymanager = PropertyManager(user = user)
+            user = User.objects.create_user(first_name = firstname, last_name = lastname, username = username,
+                                        password = password, email = email, is_propertymanager = True)
+            propertymanager = PropertyManager(user = user, organization = organization)
             propertymanager.save()
             return HttpResponse("Thank You, you have been registered.")
 
