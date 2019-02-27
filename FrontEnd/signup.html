@@ -52,31 +52,43 @@
                 <div class="imgcontainer">
                   <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
                 </div>
+                <br>
+                <h3>Create Account</h3>
+                Already have an account?
+                <!--Log in Link-->
+                <a href="#">Log in</a>
               </center>
-              <br>
+              <hr>
 
-              <!-- Login Form -->
+              <!-- Sign up Form -->
               <form>
-                <!-- Sign up Link -->
-                <a href="#" class="float-right">Sign up</a>
-
-                <!-- Username Field -->
+                <!-- Email Field -->
                 <div class="form-group">
-                  <label for="username"><b>Username</b></label><br>
-                  <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+                  <label for="username"><b>Email</b></label><br>
+                  <input type="email" class="form-control" placeholder="Enter Email" name="usermail" required>
                 </div> <!-- form-group// -->
 
                 <!-- Password Field -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="userpass"><b>Password</b></label><br>
                   <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required>
-                  <!-- Forgot Password Link -->
-                  <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br>
-                </div> <!-- form-group// -->
+                </div> --> <!-- form-group// -->
+
+                <!-- Account Type Button -->
+                <!-- <div class="btn-group" data-toggle="buttons"> -->
+                  <!-- Management Button -->
+                  <label class="btn btn-secondary float-left">
+                    <input type="radio" name="type" id="management" autocomplete="off"> Landlord
+                  </label>
+                  <!-- Tennant Button -->
+                  <label class="btn btn-secondary float-right">
+                    <input type="radio" name="type" id="tennant" autocomplete="off"> Tennant
+                  </label>
+                <!-- </div> -->
 
                 <!-- Submit Button -->
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                  <button type="submit" class="btn btn-primary btn-block">Sign up</button>
                 </div> <!-- form-group// -->
               </form>
             </article>
