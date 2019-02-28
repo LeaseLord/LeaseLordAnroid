@@ -50,13 +50,14 @@
               <!-- LeaseLord Logo -->
               <center>
                 <div class="imgcontainer">
-                  <img src="Images\LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+                  <img src="/static/login/LeaseLord_Logo.png" alt="Logo not found!" class="logo">
                 </div>
               </center>
               <br>
 
               <!-- Login Form -->
-              <form>
+              <form method = 'POST'>
+                {% csrf_token %}
                 <!-- Sign up Link -->
                 <a href="#" class="float-right">Sign up</a>
 
@@ -68,8 +69,8 @@
 
                 <!-- Password Field -->
                 <div class="form-group">
-                  <label for="userpass"><b>Password</b></label><br>
-                  <input type="password" class="form-control" placeholder="Enter Password" name="userpass" required>
+                  <label for="password"><b>Password</b></label><br>
+                  <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
                   <!-- Forgot Password Link -->
                   <small><span class="pwd"><a href="#">Forgot your password?</a></span></small><br>
                 </div> <!-- form-group// -->
