@@ -10,10 +10,10 @@ def registercheck(request):
     if request.method == "POST":
         landorten = request.POST.get('landorten')
         if landorten == '1':
-            return HttpResponseRedirect('/users/registerten')
+            return registerten(request);
 
         if landorten == '0':
-                return HttpResponseRedirect('/users/registerland')
+            return registerpm(request);
     else:
         return render(request,'registration/register.html')
 
