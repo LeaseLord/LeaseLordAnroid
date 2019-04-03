@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <style>
+      html{
+        position: relative;
+        min-height: 100%;
+      }
+      body{
+        background-color: #F0F0F0;
+        padding-top: 10px;
+        padding-bottom: 70px;
+      }
+
+      footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #505050;
+        height: 60px;
+        width: 100%;
+      }
+    </style>
+
+    <!-- Login Page -->
+    <title>LeaseLord | Sign up</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Left Column (Empty) -->
+        <aside class="col-sm-4">
+        </aside> <!-- Left Column// -->
+
+        <!-- Middle Column -->
+        <aside class="col-sm-4">
+
+          <div class="card">
+            <article class="card-body">
+
+              <!-- LeaseLord Logo -->
+              <center>
+                <div class="imgcontainer">
+                  <img src="../../static/login/LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+                </div>
+                <br>
+                <h3>Create Account</h3>
+                Already have an account?
+                <!--Log in Link-->
+                <a href="../login">Log in</a>
+              </center>
+              <hr>
+
+              <!-- Sign up Form -->
+              <form method="POST">
+                {% csrf_token %}
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="username"><b>Email</b></label><br>
+                  <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+                </div> <!-- form-group// -->
+
+                <!-- Verify Email Field -->
+                <div class="form-group">
+                  <label for="username"><b>Verify Email</b></label><br>
+                  <input type="email" class="form-control" placeholder="Verify Email" name="vemail" required>
+                </div> <!-- form-group// -->
+
+                <!-- Username -->
+                <div class="form-group">
+                  <label for="username"><b>Username</b></label><br>
+                  <input type="text" class="form-control" placeholder="Username" name="username" required>
+                </div> <!-- form-group// -->
+
+                <!-- Password -->
+                <div class="form-group">
+                  <label for="username"><b>Password</b></label><br>
+                  <input type="password" class="form-control" placeholder="Password" name="password" required>
+                </div> <!-- form-group// -->
+
+                <!-- First Name -->
+                <div class="form-group">
+                  <label for="username"><b>First Name</b></label><br>
+                  <input type="text" class="form-control" placeholder="First Name" name="firstname" required>
+                </div> <!-- form-group// -->
+
+                <!--Last Name-->
+                <div class="form-group">
+                  <label for="username"><b>Last Name</b></label><br>
+                  <input type="text" class="form-control" placeholder="Last Name" name="lastname" required>
+                </div> <!-- form-group// -->
+
+                <!-- Organization -->
+                <div class="form-group">
+                  <label for="username"><b>Organization</b></label><br>
+                  <input type="text" class="form-control" placeholder="Organization (Tenants Check Email)" name="organization" required>
+                </div> <!-- form-group// -->
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="username"><b>Phone Number</b></label><br>
+                  <input type="text" class="form-control" placeholder="Phone Number" name="phone" required>
+                </div> <!-- form-group// -->
+
+                <!-- Account Type Button Toolbar -->
+                <div class="btn-toolbar justify-content-between">
+                  <div class="btn-group" data-toggle="buttons">
+                    <!-- Management Button -->
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="landorten" id="management" autocomplete="off" value="0"> Landlord
+                    </label>
+                  </div> <!-- Management Button// -->
+                  <div class="btn-group" data-toggle="buttons">
+                    <!-- Tennant Button -->
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="landorten" id="tennant" autocomplete="off" value="1"> Tenant
+                    </label>
+                  </div> <!-- Tenant Button// -->
+                </div> <!-- Account Type Button Toolbar -->
+                <hr>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                </div> <!-- form-group// -->
+              </form>
+            </article>
+          </div> <!-- card// -->
+        </aside> <!-- Middle Column// -->
+      </div> <!-- Row -->
+    </div> <!-- container// -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+  <!-- Footer -->
+  <footer class="page-footer pt-1 pb-2">
+
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid Row -->
+        <div class="row">
+
+          <!-- Left Grid Column -->
+          <div class="col-md-4">
+
+            <!-- Content -->
+            <small>
+              <a class="text-white">LeaseLord<br></a>
+              <a class="text-white" href="/">Visit Our Website</a>
+            </small>
+
+          </div>
+          <!-- Left Grid Column// -->
+
+          <!-- Center Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Center Grid Column// -->
+
+          <!-- Right Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Right Grid Column// -->
+
+        </div>
+        <!-- Grid Row// -->
+
+      </div>
+      <!-- Footer Links// -->
+
+    </footer>
+    <!-- Footer// -->
+
+</html>
