@@ -7,7 +7,6 @@ from django.views import generic
 from django.http import Http404
 from braces.views import SelectRelatedMixin
 from . import models
-from . import forms
 from django.contrib.auth import get_user_model
 
 def post(request):
@@ -16,8 +15,8 @@ def post(request):
             user = request.user
             userorganization = PropertyManager.objects.filter(user = user).first()
             body = request.POST.get('message', None)
-            #tenants = Tenant.objects.get(propertymanager = userorganization)
-            announcement1 = Announcement(Body = body, Organization = userorganization)
+            tenants = Tenant.objects.get(propertymanager = userorganization)
+            announcement1 = Announcement(Body = body, Organization = userorganization, recievers = tenants)
             announcement1.save()
             return HttpResponse("Announcement posted!")
         else:
