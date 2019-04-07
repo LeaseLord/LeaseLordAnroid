@@ -5,7 +5,6 @@ from django.template import loader
 from users.models import User, PropertyManager, Tenant
 from django.views import generic
 from django.http import Http404
-from braces.views import SelectRelatedMixin
 from . import models
 from django.contrib.auth import get_user_model
 

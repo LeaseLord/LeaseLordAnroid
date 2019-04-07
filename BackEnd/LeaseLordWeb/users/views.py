@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import Tenant, PropertyManager
 from django.contrib.auth import authenticate, login, logout
 from django.template import loader
-from actstream.actions import follow,unfollow
 User = get_user_model()
 
 def registercheck(request):
