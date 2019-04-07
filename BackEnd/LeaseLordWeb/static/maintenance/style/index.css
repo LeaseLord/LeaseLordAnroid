@@ -1,0 +1,173 @@
+body{
+  text-align: justify;
+
+}
+
+section.one{
+  padding: .5vh 0;
+  background: #000;
+  text-align: center;
+  color: #fff;
+  margin: auto;
+}
+
+.contact{
+  text-align: left;
+  display: inline-block;
+}
+
+
+section.two{
+
+  background: #fff;
+  font-size: 20pt;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.name{
+  display: inline-block;
+
+}
+
+section.three{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../architecture-building-business-302769.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
+
+}
+section.threetest{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../requests.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
+
+}
+
+
+ul.navBarList{
+  float: right;
+  list-style-type: none;
+  margin-top: .5vh 0;
+  margin-bottom: .5vh 0;
+}
+
+ul.navBarList li{
+  display: inline-block;
+  font-size: 20pt;
+}
+
+ul.navBarList li a{
+  text-decoration: none;
+  color: #000000;
+  padding: 5px 20px;
+
+}
+
+ul.navBarList li a:hover{
+  background-color: #f4aa42;
+  color: #ffffff;
+}
+
+ul.navBarList li.currentPage a{
+  background-color: #f4aa42;
+  color: #ffffff;
+}
+
+.keepTrack{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.button{
+  font-size: 20pt;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+}
+
+.btn{
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+section.four{
+  padding: .5vh 0;
+  background: #000;
+  text-align: center;
+  color: #fff;
+  margin: auto;
+  font-size: 20pt;
+}
+
+.maintenance-form{
+    margin-top: 25px;
+    margin-bottom: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 2s ease-in-out
+}
+
+.maintenance-form h1{
+    font-size: 32px;
+    line-height: 10px;
+}
+
+.maintenance-form h2{
+  font-size: 16px;
+}
+
+form{
+  margin-top: 20px;
+  transition: all 2s ease-in-out; 
+}
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+form .submit{
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+}
+form .submit:hover{
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
