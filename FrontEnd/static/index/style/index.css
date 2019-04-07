@@ -42,6 +42,18 @@ section.three{
   font-size: 50pt;
 
 }
+section.threetest{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../requests.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
+
+}
 
 
 ul.navBarList{
@@ -117,7 +129,7 @@ section.four{
     margin-bottom: 100px;
     color: #fff;
     text-transform: uppercase;
-    transition: all 100ms ease-in-out
+    transition: all 2s ease-in-out
 }
 
 .maintenance-form h1{
@@ -131,7 +143,7 @@ section.four{
 
 form{
   margin-top: 20px;
-  transition: all 4s ease-in-out; 
+  transition: all 2s ease-in-out; 
 }
 .form-control{
     width: 600px;
