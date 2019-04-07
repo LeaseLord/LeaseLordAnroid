@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'base',
+    'maintenance',
     'postAnnouncement',
     'django.contrib.auth',
 
