@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('announcements/', include('postAnnouncement.urls')),
+    path('users/', include('maintenance.urls')),
+
 
 ]
