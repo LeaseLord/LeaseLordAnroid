@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Tenant, PropertyManager
+from django.contrib.auth import authenticate, login, logout
 from django.template import loader
+from actstream.actions import follow,unfollow
 User = get_user_model()
 
 def registercheck(request):
@@ -39,7 +41,7 @@ def registerten(request):
         #Check that username is not taken
         if User.objects.filter(username = username).exists():
             html = "<script> alert(\"Username is taken. Please try another one.\") </script>"
-            content = loader.render_to_string('registration/registerten.html')
+            content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
@@ -51,18 +53,20 @@ def registerten(request):
             pm = PropertyManager.objects.get(organization = organization)
             tenant = Tenant(propertymanager = pm,user = user)
             tenant.save()
+            user1 = authenticate(username = username,password = password)
+            login(request,user1)
             return HttpResponse("Thank You, you have been registered.") # replace with thankyou.html once front end creates it.
         else:
             #if it doesn't, give error
             html = "<script> alert(\"Organization does not exist. Please check you email for your organization name\") </script>"
-            content = loader.render_to_string('registration/registerten.html')
+            content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
             return HttpResponse(upper)
 
     else:
-        return render(request,'registration/registerten.html')
+        return render(request,'registration/register.html')
 
 # This method handles the request that deals with registering a propertymanager
 # If method is POST get all the data from POST. Check if username taken. If yes return same alert as above
@@ -85,7 +89,7 @@ def registerpm(request):
     #Check that username is not taken
         if User.objects.filter(username = username).exists():
             html = "<script> alert(\"Username is taken. Please try another one.\") </script>"
-            content = loader.render_to_string('registration/registerland.html')
+            content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
@@ -94,7 +98,7 @@ def registerpm(request):
     #check that email and verify email match
         if email != vemail:
             html = "<script> alert(\"Emails do not match. Plase try again.\") </script>"
-            content = loader.render_to_string('registration/registerland.html')
+            content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
@@ -103,7 +107,7 @@ def registerpm(request):
         #Check if Organization/PropertyManager exists
         if PropertyManager.objects.filter(organization=organization).exists():
             html = "<script> alert(\"Organization has already been registered. Please try again.\") </script>"
-            content = loader.render_to_string('registration/registerland.html')
+            content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
@@ -114,7 +118,27 @@ def registerpm(request):
                                         password = password, email = email, is_propertymanager = True)
             propertymanager = PropertyManager(user = user, organization = organization)
             propertymanager.save()
+            user1 = authenticate(username = username,password = password)
+            login(request,user1)
             return HttpResponse("Thank You, you have been registered.")
 
     else:
-        return render(request,'registration/registerland.html')
+        return render(request,'registration/register.html')
+
+
+def user_login(request):
+
+        if request.method == "POST":
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(username = username, password = password)
+
+            if user:
+                    login(request,user)
+                    if user:
+                        return HttpResponse("Thank You, you have been logged in.")
+            else:
+                return HttpResponse("Incorrect info")
+        else:
+            return render(request, 'registration/login.html')
