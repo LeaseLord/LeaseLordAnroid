@@ -33,9 +33,19 @@
     <section class="threeAnnouncement">
       <div class="sectionThreeImage">
         <div class="sectionThreeWords">
-            {% for announcement in announcements %}
-            <p style="font-size: 30px;"><span style="paragraph.time">{{announcement.created_at}}</span> {{announcement.subject}}  {{announcement.content}} </p>
-            {% endfor %}
+          <div class="maintenance-form">
+              <h1>Post Announcement</h1>
+              <h2>let everyone know what you want</h2>
+              <form id="maintenance-form" method="POST" action="">
+                {% csrf_token %}
+                  <input name="subject" type="text" class="form-control" placeholder="Subject" required><br>
+                  <textarea name="content" class="form-control" placeholder="Enter Message" rows="4" required></textarea><br>
+
+                  <input type="submit" class="form-control submit" value="SUBMIT">
+
+              </form>
+
+          </div>
         </div>
       </div>
     </section>
