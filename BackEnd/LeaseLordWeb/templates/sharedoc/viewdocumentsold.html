@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/login/LeaseLord_Logo.png" />
+    <title>Welcome to LeaseLord</title>
+    <link rel="stylesheet" href="/static/index/style/index.css">
+  </head>
+  <body>
+
+    <section class = "one">
+        <div class="contact">
+          <p>Have Questions? Contact Us!    |    850-867-5309    |    support@leaselord.com</p>
+        </div>
+
+    </section>
+
+    <section class="two">
+      <p>
+        <ul class = "navBarList">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          {% if not user.is_authenticated %}
+          <li><a href="#">About Us</a></li>
+          <li class = "currentPage"><a href="#">Contact</a></li>
+          {% endif %}
+        </ul>
+      </p>
+      <img  style="position: relative; top:5px;width:50px;height:50px;" src="/static/login/LeaseLord_Logo.png" alt="LeaseLord Logo">
+      <div class="name">
+        <p> LEASELORD</p>
+      </div>
+    </section>
+<section >
+<h2>Tenant     File</h2>
+{% for lease in pm.propm.all %}
+<table>
+  
+</table>
+<p>{{lease.tenant.user.first_name}}  Download <a href="{{ lease.lease.url }}">here</a> </p>
+{% endfor %}
+</section>
+    <section class = "four">
+      <p>LEASELORD</p>
+    </section>
+
+    </body>
+  </html>

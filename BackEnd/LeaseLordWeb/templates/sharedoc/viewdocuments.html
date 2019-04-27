@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<!-- Required Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- My CSS -->
+<style>
+  /* Common Colors:
+      - #F8F9FA (navbar background)
+      - #F0F0F0 (body background)
+      - #505050 (footer background)
+      - #CED4DA (default textbox outline)
+      - #80BDFF (default textbox selected outline)
+      - #BFDEFF (default textbox selected glow)
+  */
+  html{
+    position: relative;
+    min-height: 100%;
+  }
+  nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 61px;
+  }
+  body{
+    background-color: #F0F0F0;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #505050;
+    height: 35px;
+    width: 100%;
+  }
+</style>
+
+<!-- Home Page -->
+<title>LeaseLord</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">
+  <img src="/static/login/LeaseLord_Logo.png" width="30" height="30" alt="Logo not found!" class="logo">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="#">Profile</a>
+    {% if user.is_propertymanager %}
+    <a class="nav-item nav-link" href="/users/leaseupload">Upload Documents</a>
+    {% endif %}
+
+    <a class="nav-item nav-link" href="#">View Documents</a>
+    <a class="nav-item nav-link" href="#">View Tickets</a>
+    {% if user.is_tenant %}
+    <a class="nav-item nav-link" href="#">Send Tickets</a>
+    {% endif %}
+    <a class="nav-item nav-link" href="#">View Announcement</a>
+    {% if user.is_propertymanager %}
+    <a class="nav-item nav-link" href="#">Send Announcement</a>
+    {% endif %}
+    <a class="nav-item nav-link" href="#">Logout</a>
+
+
+  </div>
+</div>
+</nav>
+
+  <body>
+
+
+
+<section >
+
+<div class="container">
+  <div class="row">
+    <!-- Left Column (Empty) -->
+    <aside class="col-sm-4">
+    </aside> <!-- Left Column// -->
+
+    <!-- Middle Column -->
+    <aside class="col-sm-4">
+
+      <div class="card">
+        <article class="card-body">
+
+          <!-- LeaseLord Logo -->
+          <center>
+
+            <div class="container">
+                <h2>Documents</h2>
+                <div class="row">
+                <br>
+              </div>
+              {% for lease in pm.propm.all %}
+              <div class="row">
+                <aside class="col">{{lease.tenant.user.first_name}}</aside>
+                <aside class="col"> Download <a href="{{ lease.lease.url }}">here</a></aside>
+                {% endfor %}
+              </div> <!-- row// -->
+            </div> <!-- container// -->
+          </center>
+        </article>
+      </div> <!-- card// -->
+    </aside> <!-- Middle Column// -->
+  </div> <!-- Row -->
+</div> <!-- container// -->
+
+
+
+    </body>
+
+
+
+
+      <!-- Footer -->
+      <footer class="page-footer pt-1 pb-2">
+
+          <!-- Footer Links -->
+          <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid Row -->
+            <div class="row">
+
+              <!-- Left Grid Column -->
+              <div class="col-md-4">
+
+                <!-- Content -->
+                <small>
+                  <a class="text-white" href="#top">Back to Top</a> <!-- Back to Top Link -->
+                </small>
+
+              </div> <!-- Left Grid Column// -->
+
+              <!-- Center Grid Column -->
+              <!-- <div class="col-md-4">
+              </div> -->
+              <!-- Center Grid Column// -->
+
+              <!-- Right Grid Column -->
+              <!-- <div class="col-md-4">
+              </div> -->
+              <!-- Right Grid Column// -->
+
+            </div> <!-- Grid Row// -->
+          </div> <!-- Footer Links// -->
+        </footer> <!-- Footer// -->
+
+
+
+  </html>

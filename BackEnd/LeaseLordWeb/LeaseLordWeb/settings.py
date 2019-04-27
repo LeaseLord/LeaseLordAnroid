@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'maintenance',
     'postAnnouncement',
     'django.contrib.auth',
+    'document',
 
 
 ]
@@ -131,3 +132,5 @@ USE_TZ = True
 LOGIN_REDIRECT_URL = '/admin'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+MEDIA_URL = '/leases/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'leases')

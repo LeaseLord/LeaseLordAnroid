@@ -27,7 +27,7 @@ class PropertyManager(models.Model):
 # only has one property manager.
 class Tenant(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, related_name='tenant_profile')
-    propertymanager= models.ForeignKey(PropertyManager, on_delete=models.CASCADE)
+    propertymanager= models.ForeignKey(PropertyManager, on_delete=models.CASCADE,related_name='tenants')
     leasestart = models.DateField(default = None,null=True)
     leaseend = models.DateField(default = None,null=True)
     paymentdue = models.DateField(default = None,null=True)
