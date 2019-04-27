@@ -1,0 +1,131 @@
+body{
+  text-align: justify;
+
+}
+
+section.one{
+  padding: .5vh 0;
+  background: #000;
+  text-align: center;
+  color: #fff;
+  margin: auto;
+}
+
+.contact{
+  text-align: left;
+  display: inline-block;
+}
+
+
+section.two{
+
+  background: #fff;
+  font-size: 20pt;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.name{
+  display: inline-block;
+
+}
+
+section.three{
+  padding: 24vh 0;
+  background-image: url(../building-condo-condominium-36366.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #000;
+  font-size 14pt;
+
+}
+
+.card{
+  padding: 2vh 2vh;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  background-color: white;
+  margin: auto;
+  text-align: center;
+
+}
+
+.NameOfUser{
+  font-size: 30pt;
+}
+
+.TypeOfUser{
+  font-size: 14pt;
+  color: gray;
+}
+
+.NameOfProperty{
+  font-size: 19pt;
+}
+
+
+ul.navBarList{
+  float: right;
+  list-style-type: none;
+  margin-top: .5vh 0;
+  margin-bottom: .5vh 0;
+}
+
+ul.navBarList li{
+  display: inline-block;
+  font-size: 20pt;
+}
+
+ul.navBarList li a{
+  text-decoration: none;
+  color: #000000;
+  padding: 5px 20px;
+
+}
+
+ul.navBarList li a:hover{
+  background-color: #f4aa42;
+  color: #ffffff;
+}
+
+ul.navBarList li.currentPage a{
+  background-color: #f4aa42;
+  color: #ffffff;
+}
+
+
+.btn{
+  width: 80%;
+  display: inline-block;
+  padding: 30px;
+  border: none;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+}
+
+
+
+.button{
+  width: 80%;
+  display: inline-block;
+  padding: 30px;
+  border: none;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+section.four{
+  padding: .5vh 0;
+  background: #000;
+  text-align: center;
+  color: #fff;
+  margin: auto;
+  font-size: 20pt;
+}
