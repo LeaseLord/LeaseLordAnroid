@@ -52,6 +52,7 @@ section.threetest{
   text-align: center;
   color: #fff;
   font-size: 50pt;
+<<<<<<< HEAD
 
 }
 section.threeAnnouncement{
@@ -71,6 +72,27 @@ section.time{
   font-size: 50pt;
 
 }
+=======
+
+}
+section.threeAnnouncement{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../announcement_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
+
+}
+section.time{
+  background-color: #678ee2;
+  font-size: 50pt;
+
+}
+>>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
 
 ul.navBarList{
   float: right;
@@ -159,7 +181,11 @@ section.four{
 
 form{
   margin-top: 20px;
+<<<<<<< HEAD
   transition: all 2s ease-in-out; 
+=======
+  transition: all 2s ease-in-out;
+>>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
 }
 .form-control{
     width: 600px;
@@ -186,4 +212,8 @@ form .submit:hover{
   background-color: #fff;
   color: #000;
   cursor: pointer;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
