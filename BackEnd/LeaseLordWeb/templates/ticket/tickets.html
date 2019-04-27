@@ -43,7 +43,7 @@
       <div class="sectionThreeImage">
         <div class="sectionThreeWords">
             {% for ticket in tickets %}
-            <p style="font-size: 30px; border-style:ridge; border: 1px solid #fff;padding: 10px 30px;margin-left: 400px;display:table;"><span style="paragraph.time">{{announcement.created_at}}</span> {{ticket.subject}} {{ticket.content}} </p>
+            <p style="font-size: 30px; border-style:ridge; border: 1px solid #fff;padding: 10px 30px;margin-left: 400px;display:table;"><span style="paragraph.time">{{ticket.tenant.user.first_name}}  {{ticket.tenant.user.last_name}}:</span> {{ticket.subject}} <br>{{ticket.content}} </p>
             {% endfor %}
         </div>
       </div>

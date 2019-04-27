@@ -55,7 +55,7 @@ def registerten(request):
             user1 = authenticate(username = username,password = password)
             login(request,user1)
             ten = Tenant.objects.get(user = request.user)
-            return render(request,'registration/tenantprofile.html', {'ten':ten}) # replace with thankyou.html once front end creates it.
+            return HttpResponseRedirect('/users/profile')
         else:
             #if it doesn't, give error
             html = "<script> if(!alert('orgnization does not exist!')){window.location = window.location.pathname;} </script>"
@@ -121,7 +121,7 @@ def registerpm(request):
             user1 = authenticate(username = username,password = password)
             login(request,user1)
             pm = PropertyManager.objects.get(user=request.user)
-            return render(request, 'registration/pmprofile.html', {'pm':pm})
+            return HttpResponseRedirect('/users/profile')
 
     else:
         return render(request,'registration/register.html')
@@ -139,10 +139,10 @@ def user_login(request):
                     login(request,user)
                     if user.is_tenant:
                         ten = Tenant.objects.get(user = request.user)
-                        return HttpResponseRedirect('/users/pmprofile')
+                        return HttpResponseRedirect('/users/profile')
                     if user.is_propertymanager:
                         pm = PropertyManager.objects.get(user=request.user)
-                        return HttpResponseRedirect('/users/tenantprofile')
+                        return HttpResponseRedirect('/users/profile')
 
             else:
                 return HttpResponse("Incorrect info")

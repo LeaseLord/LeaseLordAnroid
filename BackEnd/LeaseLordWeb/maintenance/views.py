@@ -54,7 +54,8 @@ def displayticket(request):
             tenant1 = Tenant.objects.get(user=request.user)
             alltickets = Ticket.objects.all().filter(tenant = tenant1)
             context = {
-            'tickets' : alltickets
+            'tickets' : alltickets,
+            'tenant' : tenant1
             }
             return render(request,'ticket/tickets.html',context)
     else:
