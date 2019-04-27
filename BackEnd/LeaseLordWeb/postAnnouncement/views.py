@@ -20,7 +20,7 @@ def postAnnouncement(request):
                 pm1 = PropertyManager.objects.get(user = request.user)
                 announcement = Announcement(pm = pm1 ,content = content,subject=subject)
                 announcement.save()
-                html = "<script> alert(\"Announcement Sent!\") </script>"
+                html = "<script> if(!alert('Announcement Sent!')){window.location = window.location.pathname;} </script>"
                 content = loader.render_to_string('ticket/newpost.html')
                 upper,lower = content.split('</body>',1)
                 upper += html
@@ -29,7 +29,7 @@ def postAnnouncement(request):
             else:
                 return render(request,'ticket/newpost.html')
         else:
-            html = "<script> alert(\"You are not signed in as a landlord.\") </script>"
+            html = "<script> if(!alert('You are not signed in as a Property Manager')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('ticket/newpost.html')
             upper,lower = content.split('</body>',1)
             upper += html

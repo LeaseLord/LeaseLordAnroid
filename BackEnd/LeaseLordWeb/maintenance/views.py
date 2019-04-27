@@ -29,7 +29,7 @@ def newticket(request):
             else:
                 return render(request,'ticket/newticket.html')
         else:
-            html = "<script> alert(\"You are not signed in as a tenant.\") </script>"
+            html = "<script> if(!alert('You are not signed in as a tenant')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('ticket/newticket.html')
             upper,lower = content.split('</body>',1)
             upper += html

@@ -39,7 +39,7 @@ def registerten(request):
 
         #Check that username is not taken
         if User.objects.filter(username = username).exists():
-            html = "<script> alert(\"Username is taken. Please try another one.\") </script>"
+            html = "<script> if(!alert('Username is taken!')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
@@ -58,7 +58,7 @@ def registerten(request):
             return render(request,'registration/tenantprofile.html', {'ten':ten}) # replace with thankyou.html once front end creates it.
         else:
             #if it doesn't, give error
-            html = "<script> alert(\"Organization does not exist. Please check you email for your organization name\") </script>"
+            html = "<script> if(!alert('orgnization does not exist!')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
@@ -88,7 +88,7 @@ def registerpm(request):
 
     #Check that username is not taken
         if User.objects.filter(username = username).exists():
-            html = "<script> alert(\"Username is taken. Please try another one.\") </script>"
+            html = "<script> if(!alert('Username is taken!')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
@@ -97,7 +97,7 @@ def registerpm(request):
 
     #check that email and verify email match
         if email != vemail:
-            html = "<script> alert(\"Emails do not match. Plase try again.\") </script>"
+            html = "<script> if(!alert('Emails do not match')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
@@ -106,7 +106,7 @@ def registerpm(request):
 
         #Check if Organization/PropertyManager exists
         if PropertyManager.objects.filter(organization=organization).exists():
-            html = "<script> alert(\"Organization has already been registered. Please try again.\") </script>"
+            html = "<script> if(!alert('Organization already exists')){window.location = window.location.pathname;} </script>"
             content = loader.render_to_string('registration/register.html')
             upper,lower = content.split('</body>',1)
             upper += html
@@ -139,12 +139,26 @@ def user_login(request):
                     login(request,user)
                     if user.is_tenant:
                         ten = Tenant.objects.get(user = request.user)
-                        return render(request,'registration/tenantprofile.html', {'ten':ten})
+                        return HttpResponseRedirect('/users/pmprofile')
                     if user.is_propertymanager:
                         pm = PropertyManager.objects.get(user=request.user)
-                        return render(request, 'registration/pmprofile.html', {'pm':pm})
+                        return HttpResponseRedirect('/users/tenantprofile')
 
             else:
                 return HttpResponse("Incorrect info")
         else:
             return render(request, 'registration/login.html')
+
+
+def profile(request):
+                    if request.user.is_tenant:
+                        ten = Tenant.objects.get(user = request.user)
+                        return render(request,'registration/tenantprofile.html', {'ten':ten})
+                    if request.user.is_propertymanager:
+                        pm = PropertyManager.objects.get(user=request.user)
+                        return render(request, 'registration/pmprofile.html', {'pm':pm})
+
+
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('/')

@@ -54,21 +54,21 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav">
-    <a class="nav-item nav-link" href="#">Profile</a>
+    <a class="nav-item nav-link" href="/users/profile">Profile</a>
     {% if user.is_propertymanager %}
     <a class="nav-item nav-link" href="/users/leaseupload">Upload Documents</a>
     {% endif %}
 
-    <a class="nav-item nav-link" href="#">View Documents</a>
-    <a class="nav-item nav-link" href="#">View Tickets</a>
+    <a class="nav-item nav-link" href="/users/viewleases">View Documents</a>
+    <a class="nav-item nav-link" href="/users/tickets">View Tickets</a>
     {% if user.is_tenant %}
-    <a class="nav-item nav-link" href="#">Send Tickets</a>
+    <a class="nav-item nav-link" href="/users/newticket">Send Tickets</a>
     {% endif %}
-    <a class="nav-item nav-link" href="#">View Announcement</a>
+    <a class="nav-item nav-link" href="/users/announcements">View Announcement</a>
     {% if user.is_propertymanager %}
-    <a class="nav-item nav-link" href="#">Send Announcement</a>
+    <a class="nav-item nav-link" href="/users/newannouncement">Send Announcement</a>
     {% endif %}
-    <a class="nav-item nav-link" href="#">Logout</a>
+    <a class="nav-item nav-link" href="/users/logout">Logout</a>
 
 
   </div>

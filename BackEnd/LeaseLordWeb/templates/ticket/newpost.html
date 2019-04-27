@@ -2,40 +2,51 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="../../static/login/LeaseLord_Logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/login/LeaseLord_Logo.png" />
     <title>Welcome to LeaseLord</title>
-    <link rel="stylesheet" href="../../static/index/style/index.css">
+    <link rel="stylesheet" href="/static/maintenance/style/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/static/login/LeaseLord_Logo.png" width="30" height="30" alt="Logo not found!" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/users/profile">Profile</a>
+      {% if user.is_propertymanager %}
+      <a class="nav-item nav-link" href="/users/leaseupload">Upload Documents</a>
+      {% endif %}
+
+      <a class="nav-item nav-link" href="/users/viewleases">View Documents</a>
+      <a class="nav-item nav-link" href="/users/tickets">View Tickets</a>
+      {% if user.is_tenant %}
+      <a class="nav-item nav-link" href="/users/newticket">Send Tickets</a>
+      {% endif %}
+      <a class="nav-item nav-link" href="/users/announcements">View Announcement</a>
+      {% if user.is_propertymanager %}
+      <a class="nav-item nav-link" href="/users/newannouncement">Send Announcement</a>
+      {% endif %}
+      <a class="nav-item nav-link" href="/users/logout">Logout</a>
+
+
+    </div>
+  </div>
+  </nav>
+
+
   <body>
 
-    <section class = "one">
-        <div class="contact">
-          <p>Have Questions? Contact Us!    |    850-867-5309    |    support@leaselord.com</p>
-        </div>
-
-    </section>
-
-    <section class="two">
-      <p>
-        <ul class = "navBarList">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About Us</a></li>
-          <li class = "currentPage"><a href="#">Contact</a></li>
-        </ul>
-      </p>
-      <img  style="position: relative; top:5px;width:50px;height:50px;" src="../../static/login/LeaseLord_Logo.png" alt="LeaseLord Logo">
-      <div class="name">
-        <p> LEASELORD</p>
-      </div>
-    </section>
-
-    <section class="threeAnnouncement">
+    <section class="threetest">
       <div class="sectionThreeImage">
         <div class="sectionThreeWords">
           <div class="maintenance-form">
               <h1>Post Announcement</h1>
-              <h2>let everyone know what you want</h2>
+              <h2>Update your Tenants!</h2>
               <form id="maintenance-form" method="POST" action="">
                 {% csrf_token %}
                   <input name="subject" type="text" class="form-control" placeholder="Subject" required><br>

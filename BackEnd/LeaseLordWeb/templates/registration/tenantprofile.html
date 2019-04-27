@@ -4,29 +4,39 @@
     <meta charset="utf-8">
     <title>Tenant Profile Page</title>
     <link rel="stylesheet" href="../../static/registration/style/tenant.css">
-  </head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/static/login/LeaseLord_Logo.png" width="30" height="30" alt="Logo not found!" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/users/profile">Profile</a>
+        {% if user.is_propertymanager %}
+        <a class="nav-item nav-link" href="/users/leaseupload">Upload Documents</a>
+        {% endif %}
+
+        <a class="nav-item nav-link" href="/users/viewleases">View Documents</a>
+        <a class="nav-item nav-link" href="/users/tickets">View Tickets</a>
+        {% if user.is_tenant %}
+        <a class="nav-item nav-link" href="/users/newticket">Send Tickets</a>
+        {% endif %}
+        <a class="nav-item nav-link" href="/users/announcements">View Announcement</a>
+        {% if user.is_propertymanager %}
+        <a class="nav-item nav-link" href="/users/newannouncement">Send Announcement</a>
+        {% endif %}
+        <a class="nav-item nav-link" href="/users/lognout">Logout</a>
+
+
+      </div>
+    </div>
+    </nav>
+
   <body>
 
-    <section class = "one">
-        <div class="contact">
-          <p>Have Questions? Contact Us!    |    (001) 561-563-3032    |    support@leaselord.com</p>
-        </div>
 
-    </section>
-
-    <section class="two">
-      <p>
-        <ul class = "navBarList">
-          <li class = "currentPage"><a href="#">Your Profile</a></li>
-          <li><a href="#">Request Maintenance</a></li>
-          <li><a href="#">View Announcements</a></li>
-          <li><a href="#">Shared Documents</a></li>
-        </ul>
-      </p>
-      <div class="name">
-        <p>LEASELORD</p>
-      </div>
-    </section>
 
     <section class="three">
         <div class="sectionThreeWords">
