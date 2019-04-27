@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <style>
+      /* Common Colors:
+          - #F8F9FA (navbar background)
+          - #F0F0F0 (body background)
+          - #505050 (footer background)
+          - #CED4DA (default textbox outline)
+          - #80BDFF (default textbox selected outline)
+          - #BFDEFF (default textbox selected glow)
+      */
+      html{
+        position: relative;
+        min-height: 100%;
+      }
+      nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 61px;
+      }
+      body{
+        background-color: #F0F0F0;
+      }
+      .card{
+        background-color: #F0F0F0;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+      }
+      h1 {
+        padding-left: 1%;
+        margin-bottom: 10px;
+      }
+      footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #505050;
+        height: 35px;
+        width: 100%;
+      }
+      embed-responsive {
+        position: absolute;
+        overflow: hidden;
+      }
+    </style>
+
+    <!-- Home Page -->
+    <title>LeaseLord</title>
+  </head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/static/login/LeaseLord_Logo.png" width="30" height="30" alt="Logo not found!" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#">Home</a>
+        <a class="nav-item nav-link active" href="#">Documents<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Settings</a>
+        <a class="nav-item nav-link" href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+    <h1>Documents</h1>
+
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header pl-3" id="headingOne">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expand="true" aria-controls="collapseOne">
+            <h4>Lease</h4>
+          </button>
+        </div> <!-- card-header// -->
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" dataparent="#accordion">
+          <div class="card-body">
+            <div class='embed-responsive' style='padding-bottom:100%'>
+                <object data='Project_Guidelines.pdf' type='application/pdf'></object>
+            </div>
+          </div> <!-- card-body// -->
+        </div> <!-- collapseOne// -->
+
+        <div class="card-header pl-3" id="headingTwo">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expand="true" aria-controls="collapseTwo">
+            <h4>Upload File</h4>
+          </button>
+        </div> <!-- card-header// -->
+
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" dataparent="#accordion">
+          <div class="card-body">
+            <div class='embed-responsive'>
+              <form>
+                <div class="form-group pt-3">
+                  <input type="file" class="form-control-file">
+                </div>
+              </form>
+            </div>
+          </div> <!-- card-body// -->
+        </div> <!-- collapseOne// -->
+      </div> <!-- card// -->
+    </div> <!-- accordion// -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+  <!-- Footer -->
+  <footer class="page-footer pt-1 pb-2">
+
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid Row -->
+        <div class="row">
+
+          <!-- Left Grid Column -->
+          <div class="col-md-4">
+
+            <!-- Content -->
+            <small>
+              <a class="text-white" href="#top">Back to Top</a> <!-- Back to Top Link -->
+            </small>
+
+          </div> <!-- Left Grid Column// -->
+
+          <!-- Center Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Center Grid Column// -->
+
+          <!-- Right Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Right Grid Column// -->
+
+        </div> <!-- Grid Row// -->
+      </div> <!-- Footer Links// -->
+    </footer> <!-- Footer// -->
+
+</html>
