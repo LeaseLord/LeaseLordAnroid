@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Property Manager Profile Page</title>
-    <link rel="stylesheet" href="C:\Users\shann\Desktop\github\LeaseLordWeb\FrontEnd\tenant.css">
+    <link rel="stylesheet" href="../../static/registration/style/tenant.css">
   </head>
   <body>
 
@@ -30,6 +30,9 @@
 
     <section class="three">
         <div class="sectionThreeWords">
+                <div class="card">
+                  <div class = "button">
+                    <a href="#" class = "btn">Sign Out</a>
           {% if user.is_authenticated %}
              <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
           <div class="NameOfUser">
