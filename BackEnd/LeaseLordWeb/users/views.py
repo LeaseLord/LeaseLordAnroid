@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Tenant, PropertyManager
 from django.contrib.auth import authenticate, login, logout
-from django.template import loader
+from django.template import loader, Context, Template
 User = get_user_model()
 
 def registercheck(request):
@@ -54,7 +54,8 @@ def registerten(request):
             tenant.save()
             user1 = authenticate(username = username,password = password)
             login(request,user1)
-            return HttpResponse("Thank You, you have been registered.") # replace with thankyou.html once front end creates it.
+            ten = Tenant.objects.get(user = request.user)
+            return render(request,'registration/tenantprofile.html', {'ten':ten}) # replace with thankyou.html once front end creates it.
         else:
             #if it doesn't, give error
             html = "<script> alert(\"Organization does not exist. Please check you email for your organization name\") </script>"
@@ -62,7 +63,7 @@ def registerten(request):
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower
-            return HttpResponse(upper)
+            return render(request, 'registration/register.html')
 
     else:
         return render(request,'registration/register.html')
@@ -114,12 +115,13 @@ def registerpm(request):
         else:
         #if it doesn't, create user
             user = User.objects.create_user(first_name = firstname, last_name = lastname, username = username,
-                                        password = password, email = email, is_propertymanager = True)
+                                        password = password, email = email, is_propertymanager = True, phone = phone)
             propertymanager = PropertyManager(user = user, organization = organization)
             propertymanager.save()
             user1 = authenticate(username = username,password = password)
             login(request,user1)
-            return HttpResponse("Thank You, you have been registered.")
+            pm = PropertyManager.objects.get(user=request.user)
+            return render(request, 'registration/pmprofile.html', {'pm':pm})
 
     else:
         return render(request,'registration/register.html')
@@ -135,8 +137,13 @@ def user_login(request):
 
             if user:
                     login(request,user)
-                    if user:
-                        return HttpResponse("Thank You, you have been logged in.")
+                    if user.is_tenant:
+                        ten = Tenant.objects.get(user = request.user)
+                        return render(request,'registration/tenantprofile.html', {'ten':ten})
+                    if user.is_propertymanager:
+                        pm = PropertyManager.objects.get(user=request.user)
+                        return render(request, 'registration/pmprofile.html', {'pm':pm})
+
             else:
                 return HttpResponse("Incorrect info")
         else:
