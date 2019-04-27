@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Required Meta Tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="shortcut icon" type="image/x-icon" href="/static/login/LeaseLord_Logo.png" />
     <title>Welcome to LeaseLord</title>
     <link rel="stylesheet" href="/static/index/style/index.css">
@@ -32,7 +38,39 @@
       </div>
     </section>
 <section >
-<h2>Tenant     File</h2>
+
+<div class="container">
+  <div class="row">
+    <!-- Left Column (Empty) -->
+    <aside class="col-sm-4">
+    </aside> <!-- Left Column// -->
+
+    <!-- Middle Column -->
+    <aside class="col-sm-4">
+
+      <div class="card">
+        <article class="card-body">
+
+          <!-- LeaseLord Logo -->
+          <center>
+
+            <div class="container">
+                <h2>Tenant</h2>
+                <div class="row">
+                <br>
+              </div>
+              <div class="row">
+                <aside class="col">col</aside>
+                <aside class="col">col</aside>
+              </div> <!-- row// -->
+            </div> <!-- container// -->
+          </center>
+        </article>
+      </div> <!-- card// -->
+    </aside> <!-- Middle Column// -->
+  </div> <!-- Row -->
+</div> <!-- container// -->
+
 {% for lease in pm.propm.all %}
 <p>{{lease.tenant.user.first_name}}  Download <a href="{{ lease.lease.url }}">here</a> </p>
 {% endfor %}
