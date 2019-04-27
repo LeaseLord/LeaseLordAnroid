@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index/style/index.css">
+
+    <!-- My CSS -->
+    <style>
+      html{
+        position: relative;
+        min-height: 100%;
+      }
+      body{
+        background-color: #F0F0F0;
+        padding-top: 10px;
+        padding-bottom: 70px;
+      }
+
+      footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #505050;
+        height: 60px;
+        width: 100%;
+      }
+    </style>
+
+    <!-- Login Page -->
+    <title>LeaseLord | Document Upload</title>
+  </head>
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/static/login/LeaseLord_Logo.png" width="30" height="30" alt="Logo not found!" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Profile</a>
+          {% if user.is_propertymanager %}
+          <a class="nav-item nav-link" href="/users/leaseupload">Upload Documents</a>
+          {% endif %}
+
+          <a class="nav-item nav-link" href="/users/viewleases">View Documents</a>
+          <a class="nav-item nav-link" href="/users/tickets">View Tickets</a>
+          {% if user.is_tenant %}
+          <a class="nav-item nav-link" href="/users/newticket">Send Tickets</a>
+          {% endif %}
+          <a class="nav-item nav-link" href="/users/announcements">View Announcement</a>
+          {% if user.is_propertymanager %}
+          <a class="nav-item nav-link" href="/users/newannouncement">Send Announcement</a>
+          {% endif %}
+          <a class="nav-item nav-link" href="#">Logout</a>
+
+
+        </div>
+      </div>
+      </nav>
+
+
+
+  <body>
+
+
+    <div class="container">
+      <div class="row">
+        <!-- Left Column (Empty) -->
+        <aside class="col-sm-4">
+        </aside> <!-- Left Column// -->
+
+        <!-- Middle Column -->
+        <aside class="col-sm-4">
+
+          <div class="card">
+            <article class="card-body">
+
+              <!-- LeaseLord Logo -->
+              <center>
+                <div class="imgcontainer">
+                  <img src="../../static/login/LeaseLord_Logo.png" alt="Logo not found!" class="logo">
+                </div>
+                <br>
+                <h3>Document Upload Center</h3>
+                Upload documents for better management!
+                <!--Log in Link-->
+
+              </center>
+              <hr>
+
+              <!-- Sign up Form -->
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="username"><b>Tenant</b></label><br>
+                  <select name="tenant">
+                    {% for tenants in pm.tenants.all %}
+                    <option value="{{tenants.id}}">{{tenants.user.first_name}}  {{tenants.user.last_name}}</option>
+                    {% endfor %}
+                    </select>
+                </div> <!-- form-group// -->
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="username"><b>File</b></label><br>
+                  <input type="file" class="form-control" name="document" required>
+                </div> <!-- form-group// -->
+
+
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">Upload</button>
+                </div> <!-- form-group// -->
+              </form>
+            </article>
+          </div> <!-- card// -->
+        </aside> <!-- Middle Column// -->
+      </div> <!-- Row -->
+    </div> <!-- container// -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+  <!-- Footer -->
+  <footer class="page-footer pt-1 pb-2">
+
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid Row -->
+        <div class="row">
+
+          <!-- Left Grid Column -->
+          <div class="col-md-4">
+
+            <!-- Content -->
+            <small>
+              <a class="text-white">LeaseLord<br></a>
+              <a class="text-white" href="/">Visit Our Website</a>
+            </small>
+
+          </div>
+          <!-- Left Grid Column// -->
+
+          <!-- Center Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Center Grid Column// -->
+
+          <!-- Right Grid Column -->
+          <!-- <div class="col-md-4">
+          </div> -->
+          <!-- Right Grid Column// -->
+
+        </div>
+        <!-- Grid Row// -->
+
+      </div>
+      <!-- Footer Links// -->
+
+    </footer>
+    <!-- Footer// -->
+
+</html>
