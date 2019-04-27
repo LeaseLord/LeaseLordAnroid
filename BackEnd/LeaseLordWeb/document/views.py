@@ -37,6 +37,7 @@ def ViewLeases(request):
             return render(request,'sharedoc/viewdocuments.html',{'pm':pm1})
         else:
             tenant = Tenant.objects.get(user=request.user)
-            return render(request,'sharedoc/viewdocuments.html',{'tenant':tenant})
+            lease = Lease.objects.get(tenant=tenant)
+            return render(request,'sharedoc/viewdocuments.html',{'tenant':tenant, 'lease':lease})
     else:
         return HttpResponseRedirect('/login')

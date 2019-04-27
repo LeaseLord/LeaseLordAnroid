@@ -101,11 +101,19 @@
                 <div class="row">
                 <br>
               </div>
+              {% if user.is_propertymanager %}
               {% for lease in pm.propm.all %}
               <div class="row">
                 <aside class="col">{{lease.tenant.user.first_name}}</aside>
                 <aside class="col"> Download <a href="{{ lease.lease.url }}">here</a></aside>
                 {% endfor %}
+                {% endif %}
+
+                {% if user.is_tenant %}
+                <div class="row">
+                  <aside class="col">{{user.first_name}}</aside>
+                  <aside class="col"> Download <a href="{{ lease.url }}">here</a></aside>
+                  {% endif %}
               </div> <!-- row// -->
             </div> <!-- container// -->
           </center>
