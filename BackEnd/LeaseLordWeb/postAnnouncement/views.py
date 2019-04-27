@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect, HttpResponse
 from users.models import Tenant, PropertyManager
@@ -21,16 +21,16 @@ def postAnnouncement(request):
                 announcement = Announcement(pm = pm1 ,content = content,subject=subject)
                 announcement.save()
                 html = "<script> alert(\"Announcement Sent!\") </script>"
-                content = loader.render_to_string('Announce/announcement.html')
+                content = loader.render_to_string('ticket/newpost.html')
                 upper,lower = content.split('</body>',1)
                 upper += html
                 upper += lower
                 return HttpResponse(upper)
             else:
-                return render(request,'ticket/newticket.html')
+                return render(request,'ticket/newpost.html')
         else:
             html = "<script> alert(\"You are not signed in as a landlord.\") </script>"
-            content = loader.render_to_string('ticket/newticket.html')
+            content = loader.render_to_string('ticket/newpost.html')
             upper,lower = content.split('</body>',1)
             upper += html
             upper += lower

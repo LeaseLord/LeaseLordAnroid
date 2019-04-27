@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tenant Profile Page</title>
+    <link rel="stylesheet" href="C:\Users\shann\Desktop\github\LeaseLordWeb\FrontEnd\tenant.css">
+  </head>
+  <body>
+
+    <section class = "one">
+        <div class="contact">
+          <p>Have Questions? Contact Us!    |    (001) 561-563-3032    |    support@leaselord.com</p>
+        </div>
+
+    </section>
+
+    <section class="two">
+      <p>
+        <ul class = "navBarList">
+          <li class = "currentPage"><a href="#">Your Profile</a></li>
+          <li><a href="#">Request Maintenance</a></li>
+          <li><a href="#">View Announcements</a></li>
+          <li><a href="#">Shared Documents</a></li>
+        </ul>
+      </p>
+      <div class="name">
+        <p>LEASELORD</p>
+      </div>
+    </section>
+
+    <section class="three">
+        <div class="sectionThreeWords">
+          <div class="card">
+            <div class = "button">
+              <a href="#" class = "btn">Sign Out</a>
+            </div>
+            {% if user.is_authenticated %}
+               <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
+            <div class="NameOfUser">
+              <p> {{user.get_full_name}}</p>
+            </div>
+            <div class="TypeOfUser">
+              <p>Tenant </p>
+            </div>
+            <div class="NameOfProperty">
+              <p>Organization: {{ten.propertymanager}}</p>
+            </div>
+            <div class="NameOfPropertyManager">
+              <p>Property Manager Name: {{ten.propertymanager.user.first_name}} {{ten.propertymanager.user.last_name}}</p>
+            </div>
+            <div class="PropertyManagerPhoneNumber">
+              <p>Property Manager Phone Number: {{ten.propertymanager.user.phone}}</p>
+            </div>
+            <div class="PropertyManagerEmailAddress">
+              <p>Property Manager Email: {{ten.propertymanager.user.email}}</p>
+            </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+  <section class = "four">
+    <p>LEASELORD</p>
+  </section>
+
+  </body>
+</html>

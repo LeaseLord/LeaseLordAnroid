@@ -25,5 +25,4 @@ urlpatterns = [
     path('users/', include('postAnnouncement.urls')),
     path('users/', include('maintenance.urls')),
 
-
 ]

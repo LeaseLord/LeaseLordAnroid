@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Property Manager Profile Page</title>
+    <link rel="stylesheet" href="C:\Users\shann\Desktop\github\LeaseLordWeb\FrontEnd\tenant.css">
+  </head>
+  <body>
+
+    <section class = "one">
+        <div class="contact">
+          <p>Have Questions? Contact Us!    |    (001) 561-563-3032    |    support@leaselord.com</p>
+        </div>
+
+    </section>
+
+    <section class="two">
+      <p>
+        <ul class = "navBarList">
+          <li class = "currentPage"><a href="#">Your Profile</a></li>
+          <li><a href="#">View Maintenance Requests</a></li>
+          <li><a href="#">Post Announcements</a></li>
+          <li><a href="#">Shared Documents</a></li>
+        </ul>
+      </p>
+      <div class="name">
+        <p>LEASELORD</p>
+      </div>
+    </section>
+
+    <section class="three">
+        <div class="sectionThreeWords">
+          {% if user.is_authenticated %}
+             <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
+          <div class="NameOfUser">
+            <p>{{user.get_full_name}}</p>
+          </div>
+          <div class="NameOfProperty">
+            <p>Name of property: {{pm.organization}}</p>
+            {% endif %}
+          </div>
+        </div>
+    </section>
+
+  <section class = "four">
+    <p>LEASELORD</p>
+  </section>
+
+  </body>
+</html>
