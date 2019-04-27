@@ -42,7 +42,35 @@ section.three{
   font-size: 50pt;
 
 }
+section.threetest{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../requests.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
 
+}
+section.threeAnnouncement{
+  padding: 45vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../announcement_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #678ee2;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  font-size: 50pt;
+
+}
+section.time{
+  background-color: #678ee2;
+  font-size: 50pt;
+
+}
 
 ul.navBarList{
   float: right;
@@ -110,4 +138,52 @@ section.four{
   color: #fff;
   margin: auto;
   font-size: 20pt;
+}
+
+.maintenance-form{
+    margin-top: 25px;
+    margin-bottom: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 2s ease-in-out
+}
+
+.maintenance-form h1{
+    font-size: 32px;
+    line-height: 10px;
+}
+
+.maintenance-form h2{
+  font-size: 16px;
+}
+
+form{
+  margin-top: 20px;
+  transition: all 2s ease-in-out; 
+}
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+form .submit{
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+}
+form .submit:hover{
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
 }
