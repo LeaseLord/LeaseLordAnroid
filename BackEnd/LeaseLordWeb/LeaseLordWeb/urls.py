@@ -24,10 +24,13 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
     path('', views.index),
+<<<<<<< HEAD
     path('announcements/', include('postAnnouncement.urls')),
     path('users/',include('document.urls')),
+=======
+    path('users/', include('postAnnouncement.urls')),
+>>>>>>> announcement2
     path('users/', include('maintenance.urls')),
-
 
 ]
 

@@ -1,6 +1,8 @@
 # users/models.py
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.db import models
+
 
 # Extends the default Django User Model to include phone number, email, verification vemail
 # and the boolean tags indicating whether the user is property manager or a tenant.
@@ -33,9 +35,6 @@ class Tenant(models.Model):
     paymentdue = models.DateField(default = None,null=True)
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name
-
-
-
 
 
 

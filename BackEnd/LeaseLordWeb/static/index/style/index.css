@@ -53,6 +53,7 @@ section.threetest{
   color: #fff;
   font-size: 50pt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 section.threeAnnouncement{
@@ -75,6 +76,10 @@ section.time{
 =======
 
 }
+=======
+
+}
+>>>>>>> announcement2
 section.threeAnnouncement{
   padding: 45vh 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../announcement_background.jpg);
@@ -92,7 +97,10 @@ section.time{
   font-size: 50pt;
 
 }
+<<<<<<< HEAD
 >>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
+=======
+>>>>>>> announcement2
 
 ul.navBarList{
   float: right;
@@ -182,10 +190,14 @@ section.four{
 form{
   margin-top: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transition: all 2s ease-in-out; 
 =======
   transition: all 2s ease-in-out;
 >>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
+=======
+  transition: all 2s ease-in-out; 
+>>>>>>> announcement2
 }
 .form-control{
     width: 600px;
@@ -213,7 +225,11 @@ form .submit:hover{
   color: #000;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> a256ccbbe0a654328eed0d8a161e938648e17e8a
+=======
+}
+>>>>>>> announcement2
