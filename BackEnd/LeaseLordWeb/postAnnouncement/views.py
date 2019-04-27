@@ -1,25 +1,62 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
-from .models import Announcement
-from django.template import loader
-from users.models import User, PropertyManager, Tenant
-from django.views import generic
-from django.http import Http404
-from . import models
+from django.shortcuts import render
+from django.shortcuts import redirect
 from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect, HttpResponse
+from users.models import Tenant, PropertyManager
+from django.template import loader
+from .models import Announcement
+User = get_user_model()
 
-def post(request):
-    if request.method == "POST":
+# Create your views here.
+
+#This view deals with creating a new announcement in the system.
+def postAnnouncement(request):
+    if request.user.is_authenticated:
         if request.user.is_propertymanager:
-            user = request.user
-            userorganization = PropertyManager.objects.filter(user = user).first()
-            body = request.POST.get('message', None)
-            tenants = Tenant.objects.get(propertymanager = userorganization)
-            announcement1 = Announcement(Body = body, Organization = userorganization, recievers = tenants)
-            announcement1.save()
-            return HttpResponse("Announcement posted!")
+            if request.method == "POST":
+                username = request.user.username
+                content = request.POST.get("content",None)
+                subject = request.POST.get("subject",None)
+                pm1 = PropertyManager.objects.get(user = request.user)
+                announcement = Announcement(pm = pm1 ,content = content,subject=subject)
+                announcement.save()
+                html = "<script> alert(\"Announcement Sent!\") </script>"
+                content = loader.render_to_string('ticket/newpost.html')
+                upper,lower = content.split('</body>',1)
+                upper += html
+                upper += lower
+                return HttpResponse(upper)
+            else:
+                return render(request,'ticket/newpost.html')
         else:
-           return HttpResponse("Unable to post, you are not a property manager")
-
+            html = "<script> alert(\"You are not signed in as a landlord.\") </script>"
+            content = loader.render_to_string('ticket/newpost.html')
+            upper,lower = content.split('</body>',1)
+            upper += html
+            upper += lower
+            return HttpResponse(upper)
     else:
-         return render(request,'postannouncement/post.html')
+
+        return HttpResponseRedirect('/users/login')
+
+
+#This function deals with sending the database data to the front end.
+def displayannouncement(request):
+    if request.user.is_authenticated:
+        if request.user.is_tenant:
+            ten = Tenant.objects.get(user=request.user)
+            pm1 =  ten.propertymanager
+            allannouncements = Announcement.objects.all().filter(pm = pm1 )
+            context = {
+            'announcements' : allannouncements
+            }
+            return render(request,'Announce/announcement.html',context)
+        elif request.user.is_propertymanager:
+            pm1 = PropertyManager.objects.get(user=request.user)
+            allannouncements = Announcement.objects.all().filter(pm = pm1)
+            context = {
+            'announcements' : allannouncements
+            }
+            return render(request,'Announce/announcement.html',context)
+    else:
+            return HttpResponseRedirect('/users/login')
