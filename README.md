@@ -18,7 +18,6 @@ Property management software
 
 * [Bootstrap](https://getbootstrap.com/) - Front End Framework
 * [Django](https://www.djangoproject.com/) - Back End Framework
-* [Firebase](https://firebase.google.com/) - Database Management
 * [GitHub](https://github.com/) - Version Control
 
 ## Acknowledgements
